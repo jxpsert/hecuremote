@@ -1,0 +1,89 @@
+body {
+    background-color: #000000;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#controller {
+    width: 100%;
+    background-image: url('img/base.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 31.25%;
+    height: auto;
+    position: absolute;
+}
+
+.button {
+    position: absolute;
+    width: 10%;
+    height: auto;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button.siren {
+    top: 34%;
+    left: 1.5%;
+}
+
+.button.blue {
+    top: 34%;
+    left: 16%;
+}
+
+.button.leftlight {
+    top: 13.5%;
+    left: 30%;
+}
+
+.button.frontlight {
+    top: 13.5%;
+    left: 44%;
+}
+
+.button.rightlight {
+    top: 13.5%;
+    left: 58.5%;
+}
+
+.button.green {
+    top: 13.5%;
+    left: 73%;
+}
+
+.button.headlight {
+    top: 13.5%;
+    left: 87.5%;
+}
+
+.button.stopfront {
+    top: 57.5%;
+    left: 30%;
+}
+
+.button.stopback {
+    top: 57.5%;
+    left: 44%;
+}
+
+.button.volg {
+    top: 57.5%;
+    left: 58.5%;
+}
+
+.button.amber {
+    top: 57.5%;
+    left: 73%;
+}
+
+.button.power {
+    top: 57.5%;
+    left: 87.5%;
+}

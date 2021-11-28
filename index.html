@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HONAC/ModiForce H-ECU Controller</title>
+    <link rel="stylesheet" href="normalise.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="control.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="controller">
+            <div class="button siren" id="siren" onclick="button('siren')">
+                <img src="img/siren_off-01.png" width="100%">
+            </div>
+            <div class="button blue" id="blue" onclick="button('blue')">
+                <img src="img/light_off-01.png" width="100%">
+            </div>
+            <div class="button leftlight" id="leftlight" onclick="button('leftlight')">
+                <img src="img/leftlight_off-01.png" width="100%">
+            </div>
+            <div class="button frontlight" id="frontlight" onclick="button('frontlight')">
+                <img src="img/frontlight_off-01.png" width="100%">
+            </div>
+            <div class="button rightlight" id="rightlight" onclick="button('rightlight')">
+                <img src="img/rightlight_off-01.png" width="100%">
+            </div>
+            <div class="button green" id="green" onclick="button('green')">
+                <img src="img/light_off-01.png" width="100%">
+            </div>
+            <div class="button headlight" id="headlight" onclick="button('headlight')">
+                <img src="img/headlight_off-01.png" width="100%">
+            </div>
+            <div class="button stopfront" id="stopfront" onclick="button('stopfront')">
+                <img src="img/stopfront_off-01.png" width="100%">
+            </div>
+            <div class="button stopback" id="stopback" onclick="button('stopback')">
+                <img src="img/stopback_off-01.png" width="100%">
+            </div>
+            <div class="button volg" id="volg" onclick="button('volg')">
+                <img src="img/volg_off-01.png" width="100%">
+            </div>
+            <div class="button amber" id="amber" onclick="button('amber')">
+                <img src="img/light_off-01.png" width="100%">
+            </div>
+            <div class="button power" id="power" onclick="button('power')">
+                <img src="img/power_off-01.png" width="100%">
+            </div>
+        </div>
+    </div>
+    <audio id="beep" src="beep.mp3"></audio>
+    <audio id="longbeep" src="longbeep.mp3"></audio>
+    <audio id="sirenaudio" src="siren.mp3" loop></audio>
+</body>
+
+</html>
