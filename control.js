@@ -161,12 +161,13 @@ setInterval(function () {
     flashLightL();
     flashLightF();
     flashLightR();
+}, 750)
 
+setInterval(function () {
     if(beeping) {
         longbeep();
     }
-
-}, 500)
+}, 1000)
 
 // headlights
 function toggleHeadlight() {
