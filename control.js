@@ -1,5 +1,5 @@
-let powered = false;
-let greenOn = false;
+let powered = false; // whether or not the system is on
+let greenOn = false; // whether or not the 'on' texture is shown. goes from here
 let amberOn = false;
 let blueOn = false;
 let sirenOn = false;
@@ -10,14 +10,14 @@ let volgOn = false;
 
 let lightLOn = false;
 let lightFOn = false;
-let lightROn = false;
+let lightROn = false; 
 
-let headlights = true;
+let headlights = true; // to here. this one is on by default.
 
-let siren = false;
-let beeping = false;
+let siren = false; // whether the siren is on or not
+let beeping = false; // whether a continuous beeping sound should be played
 
-let greenFlashing = false;
+let greenFlashing = false; // whether or not this button is flashing. goes from here
 let amberFlashing = false;
 let blueFlashing = false;
 let sirenFlashing = false;
@@ -28,9 +28,9 @@ let volgFlashing = false;
 
 let lightLFlashing = false;
 let lightFFlashing = false;
-let lightRFlashing = false;
+let lightRFlashing = false; // to here
 
-let wasBlueFlashing = false;
+let wasBlueFlashing = false; // saves if the blue lights were on before engaging siren, and keeps them on when siren is turned off
 
 const buttons = ['siren', 'blue', 'leftlight', 'rightlight', 'frontlight', 'green', 'amber', 'headlight', 'power', 'stopfront', 'volg', 'stopback'];
 const buttonImages = [
@@ -98,17 +98,17 @@ const buttonImages = [
 
 function beep() {
     let beep = document.getElementById('beep');
-    beep.play();
+    beep.play(); // beep
 }
 
 function longbeep() {
     let beep = document.getElementById('longbeep');
-    beep.play();
+    beep.play(); // beeeeeeeep
 }
 
 function button(type) {
-    if (powered || type == "power") beep();
-    switch (type) {
+    if (powered || type == "power") beep(); // || type == "power" because it would not play a beep on activation otherwise
+    switch (type) { // fairly obvious what this does
         case 'power':
             togglePower();
             break;
@@ -165,17 +165,17 @@ setInterval(function () {
 
 setInterval(function () {
     if(beeping) {
-        longbeep();
+        longbeep(); // long beep every 1000 milliseconds, if beeping is true
     }
 }, 1000)
 
 // headlights
 function toggleHeadlight() {
-    if (headlights) {
+    if (headlights) { // if on, turn off
         headlights = false;
         let image = buttonImages.filter(obj => { return obj.name == 'headlight' });
         document.getElementById('headlight').firstElementChild.src = image[0].off;
-    } else {
+    } else { // if off, turn on
         headlights = true;
         let image = buttonImages.filter(obj => { return obj.name == 'headlight' });
         document.getElementById('headlight').firstElementChild.src = image[0].on;
@@ -188,11 +188,11 @@ function toggleHeadlight() {
 // left
 function toggleLightL() {
     if (!powered) return;
-    if (lightLFlashing) {
+    if (lightLFlashing) { // if on, turn off. also turns the image back to on, in case it was deactivated when the texture was off
         lightLFlashing = false;
-        let image = buttonImages.filter(obj => { return obj.name == 'leftlight' });
-        document.getElementById('leftlight').firstElementChild.src = image[0].on;
-    } else {
+        let image = buttonImages.filter(obj => { return obj.name == 'leftlight' }); // getting the right images for this button
+        document.getElementById('leftlight').firstElementChild.src = image[0].on; // sets the button's src
+    } else { // if off, turn it on!
         lightLFlashing = true;
     }
 }
@@ -201,15 +201,17 @@ function flashLightL() {
     if (!lightLFlashing) return;
     let image = buttonImages.filter(obj => {
         return obj.name == 'leftlight'
-    })
-    if (lightLOn) {
+    }) // getting the images
+    if (lightLOn) { // if on, turn off
         lightLOn = false;
         document.getElementById('leftlight').firstElementChild.src = image[0].off
-    } else {
+    } else { // if off, turn on
         lightLOn = true;
         document.getElementById('leftlight').firstElementChild.src = image[0].on
     }
 }
+
+// above functions repeat for every button except power
 
 // front
 function toggleLightF() {
@@ -484,8 +486,7 @@ function togglePower() {
             })
             document.getElementById(button).firstElementChild.src = image[0].off;
         })
-        // disable everything
-        powered = false;
+        powered = false; // turning all buttons off and disabling system
         blueOn = false;
         amberOn = false;
         greenOn = false;
@@ -496,7 +497,7 @@ function togglePower() {
         lightROn = false;
         lightLOn = false;
         
-        beeping = false;
+        beeping = false;  // disable everything
         blueFlashing = false;
         wasBlueFlashing = false;
         sirenFlashing = false;
@@ -508,6 +509,7 @@ function togglePower() {
         lightLFlashing = false;
         greenFlashing = false;
         amberFlashing = false;
+        siren = false;
 
     } else {
         buttons.forEach(button => {
@@ -516,7 +518,7 @@ function togglePower() {
             })
             document.getElementById(button).firstElementChild.src = image[0].on;
         })
-        powered = true;
+        powered = true; // turning all buttons on and activating system
         blueOn = true;
         amberOn = true;
         greenOn = true;
